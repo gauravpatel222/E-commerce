@@ -14,6 +14,18 @@ router.get('/products',loggiedin,async(req,res)=>{
         res.status(500).render('error' , {err : e.message});
     }
 })
+router.get("/home",loggiedin,async(req,res)=>{
+    try{
+        const products=await Product.find({});
+        res.render('product/index',{products});
+        }
+        catch(e){
+            res.status(500).render('error' , {err : e.message});
+        }
+})
+router.get('/',async(req,res)=>{
+    res.redirect("/login");
+})
 router.get('/products/new',loggiedin,issignedin,(req,res)=>{
     try{
     res.render('product/new');
