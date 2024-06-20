@@ -26,7 +26,7 @@ let configSession = {
 }
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/e-commerce')
+mongoose.connect('mongodb+srv://gauravgurjar8791:Gaurav%402021@cluster0.skitslc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
 .then(()=>{
     console.log("DB connected successfully")
 })
